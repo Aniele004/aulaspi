@@ -10,23 +10,24 @@ public class EventosController {
 
 	@RequestMapping("/eventos/form")
 	public String form() {
-		return "formEvento";	
-		
+		return "formEvento";
+
 	}
-	
-	@RequestMapping("/eventos/submit") 
-	public String submit(Evento evento ) {
+
+	@RequestMapping("/eventos/submit")
+	public String submit(Evento evento) {
 		System.out.println("tudo ok ");
 		System.out.println(evento.getNome());
 		System.out.println(evento.getLocal());
 		System.out.println(evento.getData());
 		System.out.println(evento.getHorario());
 		return "formSubmit";
-		
-	
+
 	}
-	
-		
-	
-	
+
+	@RequestMapping("/eventos")
+	public String adicionar() {
+		return "evento-adicionado";
+
+	}
 }

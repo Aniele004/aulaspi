@@ -6,6 +6,8 @@
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 </head>
 <body>
 	<div th:replace="~{menu :: menu}"></div>
@@ -14,7 +16,7 @@
 
 
 		<h1>Lista de eventos</h1>
-		<table>
+		<table class="highlight">
 
 			<thead>
 				<tr>
@@ -28,16 +30,15 @@
 			<tbody>
 				<tr th:each="e : ${eventos}">
 					<td th:text="${e.id}">1</td>
-					<td><a th:href="@{/eventos/{id}(id=${e.id})}"><span th:text="${e.nome}">Aniversário de Aniele</span></a></td>
+					<td><a th:href="@{/eventos/{id}(id=${e.id})}"><span
+							th:text="${e.nome}">Aniversário de Aniele</span></a></td>
 					<td th:text="${e.local}">Afonso Bezerra</td>
 					<td th:text="${e.data}">28/11/2024</td>
 					<td th:text="${e.horario}">20:00</td>
-					
+					<td><a th:href="@{/eventos/{id}/remover(id=${e.id})}"> <i class="material-icons">delete</i></a></td>
 				</tr>
 			</tbody>
-
 		</table>
-
 	</div>
 </body>
 </html>
